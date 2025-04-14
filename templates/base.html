@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Dream Decor</title>
+
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick.css' %}" />
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick-theme.css' %}" />
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/nouislider.min.css' %}" />
+
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{% static 'img/0uner/log.png' %}" type="image/x-icon">
+
+		<!-- Custom Styles -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+	</head>
+
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +0250 781 934 340</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> dreamdecor340@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> Kagugu - Bansinda</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<div class="container">
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="{% url 'home' %}" class="logo">
+									<img width="80" src="{% static 'img/0uner/log.png' %}" alt="Logo">
+								</a>
+							</div>
+						</div>
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- Wishlist -->
+								<div>
+									<a href="{% url 'home' %}">
+										<i class="fa fa-couch"></i>
+										<span>All furniture</span>
+										<div class="qty">7k</div>
+									</a>
+								</div>
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a aria-expanded="true">
+										<i class="fa fa-user"></i>
+										<span>Customer</span>
+										<div class="qty">4M</div>
+									</a>
+								</div>
+
+								<!-- Menu Toggle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+				</div>
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<div class="container">
+				<div id="responsive-nav">
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'store' %}">Our Product</a></li>
+						<li><a href="{% url 'office_furnitures' %}">Office Furnitures</a></li>
+						<li><a href="{% url 'Bedroom_Furniture' %}">Bedroom Furniture</a></li>
+						<li><a href="{% url 'Kitchen_Furniture' %}">Kitchen Furniture</a></li>
+						<li><a href="{% url 'Living_Room_Furniture' %}">Living Room Furniture</a></li>
+						<li><a href="{% url 'campany' %}">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- /NAVIGATION -->
+
+		{% block content %}
+		{% endblock %}
+
+		<!-- Location Section -->
+		<div id="newsletter" class="section" style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 10px;">
+			<h3 class="title">Our Location</h3>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.859623969085!2d30.056832143755734!3d-1.9074908768069252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca1685aa7b38b%3A0xd979706d63ac7f9a!2sKagugu%2C%20Kigali!5e0!3m2!1sen!2srw!4v1744131440741!5m2!1sen!2srw"
+				width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<div class="section">
+				<div class="container">
+					<ul class="row" style="display: flex; flex-wrap: wrap; padding: 0; margin: 0; list-style: none; justify-content: center;">
+						
+						<!-- About Us -->
+						<li class="col-md-3 col-xs-12" style="margin-bottom: 20px;">
+							<div class="footer">
+								<h3 class="footer-title">About Us</h3>
+								<p>We provide high-quality, stylish, and durable furniture to transform your home or office.</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i> Kigali, Rwanda, Gasabo, Kagugu, Bansinda</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i> +0250 781 934 340</a></li>
+									<li><a href="#"><i class="fa fa-envelope"></i> dreamdecor340@email.com</a></li>
+								</ul>
+							</div>
+						</li>
+
+						<!-- Developer Info -->
+						<li class="col-md-3 col-xs-12" style="margin-bottom: 20px;">
+							<div class="footer">
+								<h3 class="footer-title">Developer</h3>
+								<p>This website was developed by Nsanzimana Esdras, a passionate full-stack developer.</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-user"></i> Nsanzimana Esdras</a></li>
+									<li><a href="https://developeresdras.vercel.app" target="_blank"><i class="fa fa-globe"></i> developeresdras.vercel.app</a></li>
+									<li><a href="mailto:nsanzimanaesdras2@gmail.com"><i class="fa fa-envelope"></i> nsanzimanaesdras2@gmail.com</a></li>
+									<li><a href="tel:+250789865312"><i class="fa fa-phone"></i> +250 789 865 312</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+
+					<!-- Copyright -->
+					<div style="text-align: center; padding: 15px 0; border-top: 1px solid #ffffff;">
+						<p style="margin: 0; font-size: 14px;">
+							&copy; <span id="year"></span> Dream Decor. All Rights Reserved. Developed by Nsanzimana Esdras.
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- JS to show current year -->
+		<script>
+			document.getElementById("year").textContent = new Date().getFullYear();
+		</script>
+
+		<!-- jQuery Plugins -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/slick.min.js' %}"></script>
+		<script src="{% static 'js/nouislider.min.js' %}"></script>
+		<script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+	</body>
+</html>

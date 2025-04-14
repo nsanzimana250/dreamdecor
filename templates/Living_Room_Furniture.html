@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- SECTION -->
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<!-- STORE -->
+			<div id="store" class="col-md-12">
+				<!-- store top filter -->
+				<div class="store-filter clearfix">
+					<h3 class="title">Living Room Furniture Collection</h3>
+					<p>Give your living room a fresh and stylish makeover with our premium collection of furniture. From comfortable sofas to elegant coffee tables, we have everything to enhance your living space.</p>
+				</div>
+
+				<!-- store products -->
+				<div class="row">
+					{% for product in products %}
+					<a href="{% url 'product' product.id %}">
+					<div class="col-md-5 col-xs-6">
+						<div class="product">
+							<div class="product-img">
+								<img src="{{ product.main_image.url }}" alt="{{ product.name }}">
+							</div>
+							<div class="product-body">
+								<p class="product-category">{{ product.get_category_display }}</p>
+								<h3 class="product-name">
+									<a href="{% url 'product' product.id %}">{{ product.name }}</a>
+								</h3>
+								<h4 class="product-price">
+									${{ product.price }}
+									{% if product.old_price %}
+									<del class="product-old-price">${{ product.old_price }}</del>
+									{% endif %}
+								</h4>
+								<p>Want to make this piece a part of your home? <br>Click below to chat with us directly on WhatsApp and get instant help!</p>
+
+								<a href="https://wa.me/0781934340?text=Hello%20there%2C%20I'm%20interested%20in%20your%20{{ product.name }}%20for%20Rwf%20{{ product.price }}.%20Image:%20{{ image_url }}" target="_blank">
+									<i style="font-size: 30px; color: green;" class="fa-brands fa-whatsapp"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</a>
+					{% endfor %}
+				</div>
+				<!-- /store products -->
+
+				<!-- store bottom filter -->
+				<div class="store-filter clearfix">
+					<ul class="store-pagination">
+						<li class="active">1</li>
+						<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+					</ul>
+				</div>
+				<!-- /store bottom filter -->
+
+			</div>
+			<!-- /STORE -->
+		</div>
+	</div>
+</div>
+<!-- /SECTION -->
+
+{% endblock %}

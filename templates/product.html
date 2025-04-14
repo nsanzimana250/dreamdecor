@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- SECTION -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Product main img -->
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{ product.main_image.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% if product.preview_image1 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image1.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                    {% if product.preview_image2 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image2.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                    {% if product.preview_image3 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image3.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                    {% if product.preview_image4 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image4.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Product thumbnails -->
+            <div class="col-md-2 col-md-pull-5">
+                <div id="product-imgs">
+                    {% if product.preview_image1 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image1.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                    {% if product.preview_image2 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image2.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                    {% if product.preview_image3 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image3.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                    {% if product.preview_image4 %}
+                    <div class="product-preview">
+                        <img src="{{ product.preview_image4.url }}" alt="{{ product.name }}">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Product details -->
+            <div class="col-md-5">
+                <div class="product-details">
+                    <h2 class="product-name">{{ product.name }}</h2>
+                    <div>
+                        <h3 class="product-price">${{ product.price }}
+                            {% if product.old_price %}
+                            <del class="product-old-price">${{ product.old_price }}</del>
+                            {% endif %}
+                        </h3>
+                        <span class="product-available">
+                            {% if product.in_stock %} In Stock {% else %} Out of Stock {% endif %}
+                        </span>
+                    </div>
+                    <p>{{ product.description }}</p>
+
+                    <ul class="product-links">
+                        <li>Category:</li>
+                        <li><a href="#">{{ product.get_category_display }}</a></li>
+                    </ul>
+
+                    <ul class="product-links" style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                        <li><strong>Share:</strong></li>
+                       <li><a href="#"><i style="font-size: 24px;" class="fa-solid fa-share-nodes"></i></a></li>
+                        <li><a href="#"><i style="font-size: 24px;" class="fa-regular fa-envelope"></i></a></li>
+                      
+                        <!-- WhatsApp with image and message -->
+                        <li>
+                            <a href="https://wa.me/250789865312?text=Hello%20there%2C%20I'm%20interested%20in%20your%20{{ product.name }}%20for%20Rwf%20{{ product.price }}.%20Image:%20{{ image_url }}" target="_blank">
+                            <i style="font-size: 24px; color: green;" class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://wa.me/250789865312?text=Hello%20there%2C%20I'm%20interested%20in%20your%20{{ product.name }}%20for%20Rwf%20{{ product.price }}.%20Image:%20{{ image_url }}" target="_blank">
+                            <i style="font-size: 24px; color: green;" class="fa-regular fa-comment"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Comment Section -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5>Leave a Comment</h5>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <textarea class="form-control" name="comment" rows="5" placeholder="Your Comment" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Comment</button>
+                        </form>
+                    
+                        <hr>
+                    
+                        <h5>Comments</h5>
+                        {% if comments %}
+                            {% for comment in comments %}
+                                <div class="card mb-2">
+                                    <div class="card-body">
+                                        <p class="mb-1">{{ comment.content }}</p>
+                                        <small class="text-muted">Posted on {{ comment.created_at|date:"F j, Y, g:i a" }}</small>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No comments yet. Be the first to comment!</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
