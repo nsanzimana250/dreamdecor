@@ -39,9 +39,9 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +0250 781 934 340</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> dreamdecor340@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> Kagugu - Bansinda</a></li>
+						<li><a href="{% url 'home' %}"><i class="fa fa-phone"></i> +0250 781 934 340</a></li>
+						<li><a href="{% url 'home' %}"><i class="fa fa-envelope-o"></i> dreamdecor340@email.com</a></li>
+						<li><a href="{% url 'home' %}"><i class="fa fa-map-marker"></i> Kagugu - Bansinda</a></li>
 					</ul>
 				</div>
 			</div>
@@ -134,28 +134,25 @@
 					<ul class="row" style="display: flex; flex-wrap: wrap; padding: 0; margin: 0; list-style: none; justify-content: center;">
 						
 						<!-- About Us -->
-						<li class="col-md-3 col-xs-12" style="margin-bottom: 20px;">
+						<li class="col-md-3 col-xs-20" style="margin-bottom: 20px;">
 							<div class="footer">
 								<h3 class="footer-title">About Us</h3>
 								<p>We provide high-quality, stylish, and durable furniture to transform your home or office.</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i> Kigali, Rwanda, Gasabo, Kagugu, Bansinda</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i> +0250 781 934 340</a></li>
-									<li><a href="#"><i class="fa fa-envelope"></i> dreamdecor340@email.com</a></li>
+									<li><a href="{% url 'home' %}"><i class="fa fa-map-marker"></i> Kigali, Rwanda, Gasabo, Kagugu, Bansinda</a></li>
+									
 								</ul>
 							</div>
 						</li>
 
 						<!-- Developer Info -->
-						<li class="col-md-3 col-xs-12" style="margin-bottom: 20px;">
+						<li class="col-md-3 col-xs-20" style="margin-bottom: 20px;">
 							<div class="footer">
-								<h3 class="footer-title">Developer</h3>
-								<p>This website was developed by Nsanzimana Esdras, a passionate full-stack developer.</p>
+								<h3 class="footer-title"></h3>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-user"></i> Nsanzimana Esdras</a></li>
-									<li><a href="https://developeresdras.vercel.app" target="_blank"><i class="fa fa-globe"></i> developeresdras.vercel.app</a></li>
-									<li><a href="mailto:nsanzimanaesdras2@gmail.com"><i class="fa fa-envelope"></i> nsanzimanaesdras2@gmail.com</a></li>
-									<li><a href="tel:+250789865312"><i class="fa fa-phone"></i> +250 789 865 312</a></li>
+									<li><a href="{% url 'home' %}"><i class="fa fa-user"></i> KWIZERA Enock</a></li>
+									<li><a href="{% url 'home' %}"><i class="fa fa-phone"></i> +0250 781 934 340</a></li>
+									<li><a href="{% url 'home' %}"><i class="fa fa-envelope"></i> dreamdecor340@email.com</a></li>
 								</ul>
 							</div>
 						</li>
@@ -164,7 +161,7 @@
 					<!-- Copyright -->
 					<div style="text-align: center; padding: 15px 0; border-top: 1px solid #ffffff;">
 						<p style="margin: 0; font-size: 14px;">
-							&copy; <span id="year"></span> Dream Decor. All Rights Reserved. Developed by Nsanzimana Esdras.
+							&copy; <span id="year"></span> Dream Decor. All Rights Reserved. Developed by <a href="">Nsanzimana Esdras</a> .
 						</p>
 					</div>
 				</div>

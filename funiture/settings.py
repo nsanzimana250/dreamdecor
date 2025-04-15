@@ -1,8 +1,10 @@
 from pathlib import Path
-
+import os
+from dotenv import load_dotenv 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -14,8 +16,9 @@ SECRET_KEY = 'django-insecure-a988%5xkcr8g7ed1#+me&-c$19jf12dyvku0cm#9%dtp64&a1r
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = []
 
-
+ 
 # Application definition
 
 INSTALLED_APPS = [
@@ -27,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myweb',
+    'whitenoise.runserver_nostatic',  
 ]
 
 MIDDLEWARE = [
@@ -37,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'funiture.urls'
@@ -107,12 +112,16 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Static Files (CSS, JS, Images)
+
+
 STATIC_URL = '/static/'  
 STATICFILES_DIRS = [BASE_DIR / "static"] 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = BASE_DIR / "staticfiles" 
 
+
 MEDIA_URL = '/media/' 
-MEDIA_ROOT = BASE_DIR / "media"  
+MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
 
 
 # Default primary key field type

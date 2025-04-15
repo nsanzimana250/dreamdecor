@@ -525,11 +525,11 @@ textarea.input {
 
 .header-ctn>div>a>.qty {
   position: absolute;
-  right: 15px;
+  right: 53px;
   top: -10px;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
   border-radius: 50%;
   font-size: 10px;
@@ -725,7 +725,7 @@ textarea.input {
   bottom: 0;
   left: 0px;
   width: 60%;
-  background: #D10024;
+  background: #d1002397;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg);
   -ms-transform: skewX(-45deg);
@@ -739,7 +739,7 @@ textarea.input {
   bottom: 0;
   left: 1px;
   width: 100%;
-  background: #D10024;
+  background: #d1002394;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg) translateX(-100%);
   -ms-transform: skewX(-45deg) translateX(-100%);
@@ -789,7 +789,6 @@ textarea.input {
   padding: 60px 0px;
   margin: 30px 0px;
   background-color: #E4E7ED;
-  background-image: url('../img/hotdeal.png');
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -854,17 +853,23 @@ textarea.input {
 
 .product {
   position: relative;
-  margin: 15px 0px;
-  -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
-  box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
+  margin: 15px 0;
+  border-radius: 8px; /* Smooth edges */
+  background: #fff; /* Ensures a clean look */
+  box-shadow: 
+    0px 2px 4px rgba(0, 0, 0, 0.1), /* Light top shadow */
+    0px 4px 8px rgba(0, 0, 0, 0.15); /* Stronger bottom shadow */
+  transition: 0.3s ease-in-out;
 }
 
 .product:hover {
-  -webkit-box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #D10024;
-  box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #D10024;
+  box-shadow: 
+    0px 4px 6px rgba(0, 0, 0, 0.15), 
+    0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight hover effect */
 }
+
+
 
 .product .product-img {
   position: relative;
