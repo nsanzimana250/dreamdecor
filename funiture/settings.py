@@ -15,8 +15,8 @@ SECRET_KEY = 'django-insecure-a988%5xkcr8g7ed1#+me&-c$19jf12dyvku0cm#9%dtp64&a1r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dreamdecor-production-2120.up.railway.app', 'https://dreamdecor-production-2120.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://dreamdecor-production-2120.up.railway.app']
+ALLOWED_HOSTS = ['heroic-expression.railway.internal', 'https://heroic-expression.railway.internal']
+CSRF_TRUSTED_ORIGINS = ['https://heroic-expression.railway.internalp']
 
  
 # Application definition
