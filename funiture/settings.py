@@ -15,8 +15,8 @@ SECRET_KEY = 'django-insecure-a988%5xkcr8g7ed1#+me&-c$19jf12dyvku0cm#9%dtp64&a1r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['dreamdecor-production-2120.up.railway.app', 'https://dreamdecor-production-2120.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://dreamdecor-production-2120.up.railway.app']
 
  
 # Application definition
@@ -72,11 +72,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'epHyWzYsoZvhPosmGMWsgIoFdjWyTxeB',
-        'HOST': 'postgres.railway.internal',
-        'PORT': '5432',
+        'PASSWORD': os.environ['dreamdecorpassword'],
+        'HOST': 'shortline.proxy.rlwy.net',
+        'PORT': '56474',
     }
-}
+} 
 
 
 # Password validation
